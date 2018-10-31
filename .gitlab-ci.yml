@@ -11,6 +11,7 @@ deploy:
   - puma-stop
   - bundle install
   - rails db:migrate
-  - nuhup rails server -d -b 0.0.0.0 -p 3000 &
+  - nohup rails server -d -b 0.0.0.0 -p 3000 &
+
   only:
   - master

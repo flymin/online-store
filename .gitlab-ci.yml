@@ -9,6 +9,6 @@ deploy:
   script:
   - puma-stop
   - bundle install
-  - nuhup rails server -d -b 0.0.0.0 -p 3000 &
+  - nohup rails server -d -b 0.0.0.0 -p 3000 &
   only:
   - master

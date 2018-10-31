@@ -2,7 +2,7 @@ test:
   stage: test
   script:
   - bundle install
-  - rails db:migrate
+  - rails db:migrate RAILS_ENV=test
   - rails test
 
 deploy:

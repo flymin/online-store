@@ -1,5 +1,7 @@
 # README
 
+[![build status](http://ruby-git.act.buaa.edu.cn/ruby-2018/16071064-website/badges/master/er/build.svg)](http://ruby-git.act.buaa.edu.cn/ruby-2018/16071064-website/commits/master)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

@@ -1,0 +1,14 @@
+test:
+  stage: test
+  script:
+  - bundle install
+  - rails test
+
+deploy:
+  stage: deploy
+  script:
+  - puma-stop
+  - bundle install
+  - nuhup rails server -d -b 0.0.0.0 -p 3000 &
+  only:
+  - master

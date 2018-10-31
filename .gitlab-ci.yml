@@ -2,6 +2,7 @@ test:
   stage: test
   script:
   - bundle install
+  - rails db:migrate
   - rails test
 
 deploy:
@@ -9,6 +10,7 @@ deploy:
   script:
   - puma-stop
   - bundle install
+  - rails db:migrate
   - nuhup rails server -d -b 0.0.0.0 -p 3000 &
   only:
   - master

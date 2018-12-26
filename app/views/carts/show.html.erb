@@ -17,5 +17,14 @@
 
 </table>
 
-<%= button_to 'Empty cart', @cart, method: :delete,
-    data: { confirm: 'Are you sure?' } %>
+<table>
+  <tr class="button_line">
+    <td>
+      <%= button_to 'Empty cart', @cart, method: :delete,
+          data: { confirm: 'Are you sure?' } %> 
+    </td>
+    <td>
+      <%= button_to 'Back Home', store_index_path, method: :get %>
+    </td>
+  </tr>
+</table>

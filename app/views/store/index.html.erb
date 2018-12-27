@@ -8,17 +8,19 @@
       <div id="cart">
         <%= render @cart %>
       </div>
-      <div class="container">
-        </br>
-        <center>
-        <%= button_to 'Empty cart', @cart, method: :delete,
-          data: { confirm: 'Are you sure?' },
-          :class => "btn btn-outline-secondary btn-sm" %>
+      <% if @cart.line_items.count != 0 %>
+        <div class="container">
           </br>
-        <%= link_to 'Cart Page', @cart, :role => "button",
-          :class => "btn btn-outline-secondary btn-sm" %>
-        </center>
-      </div>
+          <center>
+          <%= button_to 'Empty cart', @cart, method: :delete,
+            data: { confirm: 'Are you sure?' },
+            :class => "btn btn-outline-secondary btn-sm" %>
+            </br>
+          <%= link_to 'Cart Page', @cart, :role => "button",
+            :class => "btn btn-outline-secondary btn-sm" %>
+          </center>
+        </div>
+      <% end %>
     </ul>
   </div>
   <!-- /#sidebar-wrapper -->

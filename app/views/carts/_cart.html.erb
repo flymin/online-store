@@ -1,20 +1,32 @@
-<table class="table table-sm table-dark">
-  <thead>
-    <tr>
-      <th scope="col">number</th>
-      <th scope="col">product</th>
-      <th scope="col">price</th>
-    </tr>
-  </thead>
+<% if cart.line_items.count == 0 %>
+  <table class="table table-sm table-dark">
+    <thead>
+      <tr>
+        <th> </th>
+        <th>Your cart is empty!</th>
+        <th> </th>
+      </tr>
+    </thead>
+  </table>
+<% else %>
+  <table class="table table-sm table-dark">
+    <thead>
+      <tr>
+        <th scope="col">number</th>
+        <th scope="col">product</th>
+        <th scope="col">price</th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <%= render(cart.line_items) %>
+    <tbody>
+      <%= render(cart.line_items) %>
 
-    <tr class="total_line">
+      <tr class="total_line">
 
-      <td colspan="2">Total</td>
-      <td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
-    </tr>
-  </tbody>
+        <td colspan="2">Total</td>
+        <td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
+      </tr>
+    </tbody>
 
-</table>
+  </table>
+<% end %>

@@ -18,31 +18,6 @@
 
   <body id="dummybodyid" style>
     <div id="wrapper">
-
-      <!-- Sidebar -->
-      <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-          <li class="sidebar-brand">
-              YOUR CART
-          </li>
-          <div id="cart">
-            <%= render @cart %>
-          </div>
-          <div class="container">
-            </br>
-            <center>
-            <%= button_to 'Empty cart', @cart, method: :delete,
-              data: { confirm: 'Are you sure?' },
-              :class => "btn btn-outline-secondary btn-sm" %>
-              </br>
-            <%= link_to 'Cart Page', @cart, :role => "button",
-              :class => "btn btn-outline-secondary btn-sm" %>
-            </center>
-          </div>
-        </ul>
-      </div>
-      <!-- /#sidebar-wrapper -->
-
       <!-- Page Content -->
       <div id="page-content-wrapper">
         <!-- Navigation -->
@@ -69,10 +44,15 @@
           </div>
         </nav>
         <!-- Navigation end -->
+      </div>
+      <!-- /#page-content-wrapper -->
 
-        <div class="container">
-          <%= yield %>
-        </div>
+      <div class="container">
+        <%= yield %>
+      </div>
+
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
         <!-- Footer -->
         <footer class="py-5 bg-dark">
           <div class="container">
@@ -99,3 +79,4 @@
   </body>
 
 </html>
+

@@ -18,6 +18,10 @@
         <div class="container">
           </br>
           <center>
+            <%= button_to 'Checkout', new_order_path, method: :get,
+                          :type => "button",
+                          :class => "btn btn-outline-secondary btn-sm"%>
+            </br>
             <%= button_to 'Empty cart', @cart, method: :delete,
                           data: {confirm: 'Are you sure?'},
                           :class => "btn btn-outline-secondary btn-sm" %>
@@ -112,4 +116,10 @@
     </div>
   </div>
   <!-- /#page-content-wrapper -->
+  <!-- Menu Toggle Script -->
+  <script>$("#menu-toggle").click(function (e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+  });
+  </script>
 </div>

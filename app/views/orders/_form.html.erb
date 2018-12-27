@@ -1,0 +1,65 @@
+<%= form_with(model: order, local: true) do |form| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+      <label for="validationCustom01">
+        <%= form.label :name %>
+      </label>
+      <%= form.text_field :name, size: 40,
+          :type => "text", :class => "form-control",
+          :id => "validationCustom01",
+          :placeholder => "Flymin",
+          :required => true%>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+  </div>
+
+  <div class="form-group">
+    <label for="validationCustom01">
+      <%= form.label :address %>
+    </label>
+    <%= form.text_area :address, rows: 3, cols: 40,
+                       :type => "text", :class => "form-control",
+                       :id => "validationCustom01",
+                       :placeholder => "BUAA, Beijing, China",
+                       :required => true%>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlInput1"><%= form.label :email %></label>
+    <%= form.text_field :email,
+        :type => "email", :class => "form-control",
+        :id => "exampleFormControlInput1",
+        :placeholder => "name@example.com",
+                        :required => true %>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlFile1">
+      <%= form.label :pay_type %>
+    </label>
+    <%= select_tag( :pay_type,
+                    options_for_select([['Check', 0],['Credit card', 1],['Purchase order', 2]]),
+                    {:class => 'custom-select', :required => true}) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit :class => "btn btn-primary",
+    :type => "submit", :role => "button"%>
+  </div>
+<% end %>

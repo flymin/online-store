@@ -1,86 +1,101 @@
 <!DOCTYPE html>
 <html>
   <head>
-		<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     <title>FLYMIN Online Store</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-		<!-- Bootstrap core CSS -->
-		    <link href="https://blackrockdigital.github.io/startbootstrap-shop-homepage/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<!-- Custom styles for this template -->
-		    <link href="https://blackrockdigital.github.io/startbootstrap-shop-homepage/css/shop-homepage.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="https://blackrockdigital.github.io/startbootstrap-shop-homepage/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="https://blackrockdigital.github.io/startbootstrap-shop-homepage/css/shop-homepage.css" rel="stylesheet">
   </head>
 
   <body id="dummybodyid" style>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-				<a class="navbar-brand" href="#">FLYMIN</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-						<a class="nav-link" href="">Home
-                <span class="sr-only">(current)</span>
-            </a>
-            </li>
-            <li class="nav-item">
-							<a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-							<a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-							<a class="nav-link" href="#">About</a>
-            </li>
-          </ul>
-        </div>
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li class="sidebar-brand">
+              YOUR CART
+          </li>
+          <div id="cart">
+            <%= render @cart %>
+          </div>
+          <div class="container">
+            </br>
+            <center>
+            <%= button_to 'Empty cart', @cart, method: :delete,
+              data: { confirm: 'Are you sure?' },
+              :class => "btn btn-outline-secondary btn-sm" %>
+              </br>
+            <%= link_to 'Cart Page', @cart, :role => "button",
+              :class => "btn btn-outline-secondary btn-sm" %>
+            </center>
+          </div>
+        </ul>
       </div>
-    </nav>
+      <!-- /#sidebar-wrapper -->
 
-    <div id="main">
       <!-- Page Content -->
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-lg-3">
-            <h1 class="my-4">Flymin's bookstore</h1>
-            <div class="list-group">
-              <a href="#" class="list-group-item">Category 1</a>
-              <a href="#" class="list-group-item">Category 2</a>
-              <a href="#" class="list-group-item">Category 3</a>
+      <div id="page-content-wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+          <div class="container">
+            <a class="navbar-brand" href="#">FLYMIN</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="">Home
+                    <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a></li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a></li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a></li>
+              </ul>
             </div>
           </div>
-          <!-- /.col-lg-3 -->
-          
+        </nav>
+        <!-- Navigation end -->
+
+        <div class="container">
           <%= yield %>
-      
         </div>
-        <!-- /.row -->
+        <!-- Footer -->
+        <footer class="py-5 bg-dark">
+          <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; FLYMIN 2018</p>
+          </div>
+          <!-- /.container -->
+        </footer>
       </div>
-      <!-- /.container -->
+      <!-- /#page-content-wrapper -->
     </div>
+    <!-- /#wrapper -->
 
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; FLYMIN 2018</p>
-      </div>
-      <!-- /.container -->
-    </footer>
-
-		<!-- Bootstrap core JavaScript -->
+    <!-- Bootstrap core JavaScript -->
     <script src="https://blackrockdigital.github.io/startbootstrap-shop-homepage/vendor/jquery/jquery.min.js"></script>
-		<script src="https://blackrockdigital.github.io/startbootstrap-shop-homepage/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  </body>
-</html>
+    <script src="https://blackrockdigital.github.io/startbootstrap-shop-homepage/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Menu Toggle Script -->
+    <script>$("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+      });
+    </script>
 
+  </body>
+
+</html>

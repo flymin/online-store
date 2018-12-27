@@ -1,30 +1,32 @@
 <p id="notice"><%= notice %></p>
-
 <h2>Your Cart</h2>
-<table>
-  <% @cart.line_items.each do |item| %>
-    <tr>
-      <td><%= item.quantity %>&times;</td>
-      <td><%= item.product.title %></td>
-      <td class="item_price"><%= number_to_currency(item.total_price) %></td>
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">number</th>
+        <th scope="col">product</th>
+        <th scope="col">price</th>
+      </tr>
+    </thead>
+
+  <tbody>
+    <%= render(@cart.line_items) %>
+
+    <tr class="total_line">
+      <td colspan="2">Total</td>
+      <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
     </tr>
-  <% end %>
+  </tbody>
 
-  <tr class="total_line">
-    <td colspan="Z">Total</td>
-    <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
-  </tr>
+  </table>
 
-</table>
-
-<table>
-  <tr class="button_line">
-    <td>
-      <%= button_to 'Empty cart', @cart, method: :delete,
-          data: { confirm: 'Are you sure?' } %> 
-    </td>
-    <td>
-      <%= button_to 'Back Home', store_index_path, method: :get %>
-    </td>
-  </tr>
-</table>
+  <div class="container">
+    <%= link_to 'Empty cart', @cart, method: :delete,
+      data: { confirm: 'Are you sure?' },
+      :type => "button", :class => "btn btn-secondary btn-lg btn-block"%>
+    <%= link_to 'Back Home', store_index_path, method: :get, 
+        :role => "button", :class => "btn btn-primary btn-lg btn-block" %>
+  </div>
+  </br>
+</div>

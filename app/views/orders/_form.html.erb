@@ -49,17 +49,18 @@
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
 
+
+
   <div class="form-group">
     <label for="exampleFormControlFile1">
       <%= form.label :pay_type %>
     </label>
-    <%= select_tag( :pay_type,
-                    options_for_select([['Check', 0],['Credit card', 1],['Purchase order', 2]]),
-                    {:class => 'custom-select', :required => true}) %>
+    <%= form.select   :pay_type, Order.pay_types.keys,
+                      {prompt: 'Select'},
+                      {:class => "form-control", :id => "exampleFormControlSelect1"} %>
   </div>
 
   <div class="actions">
-    <%= form.submit :class => "btn btn-primary",
-    :type => "submit", :role => "button"%>
+    <%= form.submit 'Submit', :type => "submit", :class => "btn btn-primary"%>
   </div>
 <% end %>

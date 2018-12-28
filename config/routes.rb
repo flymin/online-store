@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :users
+  get 'author' => 'author#show'
   resources :orders
   resources :line_items
   resources :carts

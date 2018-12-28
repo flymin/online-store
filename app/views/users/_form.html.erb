@@ -1,0 +1,61 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <h5 class="card-header">Please input your in formation</h5>
+  <div class="card-body">
+
+    <div class="form-group">
+      <label for="validationCustom01">
+        <%= form.label :name %>
+      </label>
+      <%= form.text_field :name, size: 40,
+                          :type => "text", :class => "form-control",
+                          :id => "validationCustom01",
+                          :placeholder => "Flymin",
+                          :required => true %>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputPassword3">
+        <%= form.label :password %>
+      </label>
+      <%= form.password_field :password,
+                              :type => "password", :class => "form-control",
+                              :id => "inputPassword3" %>
+      <!--          <input type="password" class="form-control" id="inputPassword3" placeholder="Password">-->
+    </div>
+
+    <div class="form-group">
+      <label for="inputPassword4">
+        <%= form.label :password_confirmation %>
+      </label>
+      <%= form.password_field :password_confirmation,
+                              :type => "password", :class => "form-control",
+                              :id => "inputPassword4" %>
+      <!--          <input type="password" class="form-control" id="inputPassword4" placeholder="Password">-->
+    </div>
+
+
+    <div class="actions">
+      <%= form.submit 'Submit', :type => "submit", :class => "btn btn-success" %>
+      <%= link_to 'Back', users_path,
+                  :class => "btn btn-secondary", :role => "button" %>
+    </div>
+
+  </div>
+
+<% end %>

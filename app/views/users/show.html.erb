@@ -1,0 +1,14 @@
+<div class="my-4">
+  <div class="alert alert-secondary" role="alert">
+    <%= notice %>
+  </div>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @user.name %>
+  </p>
+
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Back', users_path %>
+
+</div>

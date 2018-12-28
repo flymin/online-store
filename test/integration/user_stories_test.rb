@@ -51,7 +51,7 @@ class UserStoriesTest < ActionDispatch::IntegrationTest
       assert_equal 1, order.line_items.size
       line_item = order.line_items[0]
       assert_equal ruby_book, line_item.product
-      
+
     end
   end
 

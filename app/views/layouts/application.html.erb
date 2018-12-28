@@ -36,6 +36,10 @@
         </li>
         <li class="nav-item">
           <%= link_to "About", author_url, :class => "nav-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Backstage", login_url, :class => "nav-link"%>
+        </li>
         <% if session[:user_id] %>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">

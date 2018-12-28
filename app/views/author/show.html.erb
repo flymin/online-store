@@ -19,7 +19,9 @@
   <link href="https://blackrockdigital.github.io/startbootstrap-resume/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="https://blackrockdigital.github.io/startbootstrap-resume/css/resume.min.css" rel="stylesheet">
+<!--  <link href="../../assets/stylesheets/admin.scss" rel="stylesheet">-->
+  <link src="admin.scss" rel="stylesheet">
+  <%= stylesheet_link_tag "admin" %>
 
 </head>
 
@@ -28,8 +30,9 @@
   <a class="navbar-brand js-scroll-trigger" href="#page-top">
     <span class="d-block d-lg-none">Clarence Taylor</span>
     <span class="d-none d-lg-block">
-          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="https://blackrockdigital.github.io/startbootstrap-resume/img/profile.jpg" alt="">
-        </span>
+<!--          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="https://blackrockdigital.github.io/startbootstrap-resume/img/profile.jpg" alt="">-->
+      <%= image_tag "28671430.jpg", class: "img-fluid img-profile rounded-circle mx-auto mb-2", alt: "" %>
+    </span>
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -66,24 +69,25 @@
 
   <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
     <div class="my-auto">
-      <h1 class="mb-0">Clarence
-        <span class="text-primary">Taylor</span>
+      <h1 class="mb-0">FLYMIN
+        <span class="text-primary">G.</span>
       </h1>
-      <div class="subheading mb-5">3542 Berry Street · Cheyenne Wells, CO 80810 · (317) 585-8468 ·
-        <a href="mailto:name@email.com">name@email.com</a>
+      <div class="subheading mb-5">No.84 Charing Cross Road
+        <a href="mailto:youcontactme@me.com">youcontact@me.com</a>
       </div>
-      <p class="lead mb-5">I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
+      <p class="lead mb-5">I am enjoying using Ruby on Rails to make my own website pages, this is only a small attemp.
+      </br>The links bellow are all fake, I won't leave information.</p>
       <div class="social-icons">
-        <a href="#">
+        <a href="https://www.instagram.com/">
           <i class="fab fa-linkedin-in"></i>
         </a>
-        <a href="#">
+        <a href="https://github.com/">
           <i class="fab fa-github"></i>
         </a>
-        <a href="#">
+        <a href="http://twitter.com/">
           <i class="fab fa-twitter"></i>
         </a>
-        <a href="#">
+        <a href="http://www.facebook.com/">
           <i class="fab fa-facebook-f"></i>
         </a>
       </div>
@@ -152,24 +156,13 @@
 
       <div class="resume-item d-flex flex-column flex-md-row mb-5">
         <div class="resume-content mr-auto">
-          <h3 class="mb-0">University of Colorado Boulder</h3>
-          <div class="subheading mb-3">Bachelor of Science</div>
-          <div>Computer Science - Web Development Track</div>
-          <p>GPA: 3.23</p>
+          <h3 class="mb-0">Beijing University of Aeronautics and Astronautics</h3>
+          <div class="subheading mb-3">Undergraduate Degree</div>
+          <div>Computer Science</div>
+          <p>GPA: *.**</p>
         </div>
         <div class="resume-date text-md-right">
-          <span class="text-primary">August 2006 - May 2010</span>
-        </div>
-      </div>
-
-      <div class="resume-item d-flex flex-column flex-md-row">
-        <div class="resume-content mr-auto">
-          <h3 class="mb-0">James Buchanan High School</h3>
-          <div class="subheading mb-3">Technology Magnet Program</div>
-          <p>GPA: 3.56</p>
-        </div>
-        <div class="resume-date text-md-right">
-          <span class="text-primary">August 2002 - May 2006</span>
+          <span class="text-primary">August 2016 - Present</span>
         </div>
       </div>
 
@@ -185,40 +178,34 @@
       <div class="subheading mb-3">Programming Languages &amp; Tools</div>
       <ul class="list-inline dev-icons">
         <li class="list-inline-item">
-          <i class="fab fa-html5"></i>
+          <i class="fab fa-python"></i>
         </li>
         <li class="list-inline-item">
-          <i class="fab fa-css3-alt"></i>
+          <i class="fab fa-alipay"></i>
         </li>
         <li class="list-inline-item">
-          <i class="fab fa-js-square"></i>
+          <i class="fab fa-chrome"></i>
         </li>
         <li class="list-inline-item">
-          <i class="fab fa-angular"></i>
+          <i class="fab fa-creative-commons-by"></i>
         </li>
         <li class="list-inline-item">
-          <i class="fab fa-react"></i>
+          <i class="fab fa-docker"></i>
         </li>
         <li class="list-inline-item">
-          <i class="fab fa-node-js"></i>
+          <i class="fab fa-facebook"></i>
         </li>
         <li class="list-inline-item">
-          <i class="fab fa-sass"></i>
+          <i class="fab fa-fort-awesome"></i>
         </li>
         <li class="list-inline-item">
-          <i class="fab fa-less"></i>
+          <i class="fab fa-github"></i>
         </li>
         <li class="list-inline-item">
-          <i class="fab fa-wordpress"></i>
+          <i class="fab fa-r-project"></i>
         </li>
         <li class="list-inline-item">
-          <i class="fab fa-gulp"></i>
-        </li>
-        <li class="list-inline-item">
-          <i class="fab fa-grunt"></i>
-        </li>
-        <li class="list-inline-item">
-          <i class="fab fa-npm"></i>
+          <i class="fab fa-qq"></i>
         </li>
       </ul>
 
@@ -226,15 +213,21 @@
       <ul class="fa-ul mb-0">
         <li>
           <i class="fa-li fa fa-check"></i>
-          Mobile-First, Responsive Design</li>
+          <s>
+            Mobile-First, Responsive Design
+          </s>
+        </li>
         <li>
           <i class="fa-li fa fa-check"></i>
-          Cross Browser Testing &amp; Debugging</li>
+          <s>
+            Cross Browser Testing &amp; Debugging
+          </s>
+          </li>
         <li>
-          <i class="fa-li fa fa-check"></i>
+          <i class="fa-li fas fa-times"></i>
           Cross Functional Teams</li>
         <li>
-          <i class="fa-li fa fa-check"></i>
+          <i class="fa-li fas fa-times"></i>
           Agile Development &amp; Scrum</li>
       </ul>
     </div>
@@ -245,7 +238,7 @@
   <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
     <div class="my-auto">
       <h2 class="mb-5">Interests</h2>
-      <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
+      <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, <s>I am an avid skier and novice ice climber.</s> During the warmer months here in <s>Colorado</s>, I enjoy <s>mountain</s> biking, free climbing, and kayaking.</p>
       <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
     </div>
   </section>
@@ -256,32 +249,36 @@
     <div class="my-auto">
       <h2 class="mb-5">Awards &amp; Certifications</h2>
       <ul class="fa-ul mb-0">
-        <li>
-          <i class="fa-li fa fa-trophy text-warning"></i>
-          Google Analytics Certified Developer</li>
-        <li>
-          <i class="fa-li fa fa-trophy text-warning"></i>
-          Mobile Web Specialist - Google Certification</li>
-        <li>
-          <i class="fa-li fa fa-trophy text-warning"></i>
-          1<sup>st</sup>
-          Place - University of Colorado Boulder - Emerging Tech Competition 2009</li>
-        <li>
-          <i class="fa-li fa fa-trophy text-warning"></i>
-          1<sup>st</sup>
-          Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)</li>
-        <li>
-          <i class="fa-li fa fa-trophy text-warning"></i>
-          2<sup>nd</sup>
-          Place - University of Colorado Boulder - Emerging Tech Competition 2008</li>
-        <li>
-          <i class="fa-li fa fa-trophy text-warning"></i>
-          1<sup>st</sup>
-          Place - James Buchanan High School - Hackathon 2006</li>
-        <li>
-          <i class="fa-li fa fa-trophy text-warning"></i>
-          3<sup>rd</sup>
-          Place - James Buchanan High School - Hackathon 2005</li>
+          <li>
+            <i class="fa-li fa fa-trophy"></i><s>
+            Google Analytics Certified Developer</s></li>
+          <li>
+            <i class="fa-li fa fa-trophy"></i><s>
+            Mobile Web Specialist - Google Certification</s></li>
+          <li>
+            <i class="fa-li fa fa-trophy"></i><s>
+            1<sup>st</sup>
+            Place - University of Colorado Boulder - Emerging Tech Competition 2009</s></li>
+          <li>
+            <i class="fa-li fa fa-trophy"></i><s>
+            1<sup>st</sup>
+            Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)</s></li>
+          <li>
+            <i class="fa-li fa fa-trophy"></i><s>
+            2<sup>nd</sup>
+            Place - University of Colorado Boulder - Emerging Tech Competition 2008</s></li>
+          <li>
+            <i class="fa-li fa fa-trophy"></i><s>
+            1<sup>st</sup>
+            Place - James Buchanan High School - Hackathon 2006</s></li>
+          <li>
+            <i class="fa-li fa fa-trophy "></i><s>
+            3<sup>rd</sup>
+            Place - James Buchanan High School - Hackathon 2005</s></li>
+          <li>
+            <i class="fa-li fa fa-trophy text-warning"></i>
+            N<sup>th</sup>
+            Towardsing all above, 2019</li>
       </ul>
     </div>
   </section>

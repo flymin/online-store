@@ -1,0 +1,36 @@
+<% if flash[:notice] %>
+  <div class="alert alert-secondary my-4" role="alert">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+<div class="card my-4">
+
+  <%= form_tag do %>
+    <h5 class="card-header">Log In</h5>
+    <div class="card-body">
+      <div class="form-group">
+        <%= label_tag :name, 'Name:',
+                      :for => "validationCustom01" %>
+        <%= text_field_tag :name, params[:name],
+                           :type => "text", :class => "form-control",
+                           :id => "validationCustom01",
+                           :placeholder => "Flymin",
+                           :required => true %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :password, 'Password:',
+                      :for => "inputPassword1" %>
+        <%= password_field_tag :password, params[:password],
+                               :type => "password", :class => "form-control",
+                               :id => "inputPassword1" %>
+      </div>
+
+      <div>
+        <%= submit_tag "Login",
+                       :type => "submit", :class => "btn btn-success" %>
+      </div>
+    </div>
+
+  <% end %>
+</div>

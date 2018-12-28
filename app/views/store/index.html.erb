@@ -44,6 +44,9 @@
         <div class="row">
           <div class="col-lg-3">
             <h1 class="my-4">Flymin's bookstore</h1>
+            <div class="alert alert-secondary" role="alert">
+              <%= notice %>
+            </div>
             <div class="list-group">
               <a href="#" class="list-group-item">Category 1</a>
               <a href="#" class="list-group-item">Category 2</a>
@@ -76,8 +79,6 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span></a>
             </div>
-            <div class="alert alert-secondary" role="alert">
-              <%= notice %></div>
             <div class="row">
               <% cache @products do %>
                 <% @products.each do |product| %>

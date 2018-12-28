@@ -2,6 +2,13 @@ class ApplicationController < ActionController::Base
   before_action :authorize
 
   # ...
+  rescue_from 'User::Error' do |exception|
+    if controller_name == "users" && action_name == "delete"
+      redirect_to users_url, notice: exception.message
+    else
+      render plain: 'Not found', status: 400
+    end
+  end
 
   protected
 

@@ -1,4 +1,4 @@
-t:
+test:
   stage: test
   script:
   - bundle install

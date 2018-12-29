@@ -1,0 +1,18 @@
+t:
+  stage: test
+  script:
+  - bundle install
+  - rails db:migrate RAILS_ENV=test
+  - rails test
+
+deploy:
+  stage: deploy
+  script:
+  - puma-stop
+  - bundle install
+  - rails db:migrate
+  - nohup rails server -d -b 0.0.0.0 -p 3000 &
+
+  only:
+  - master
+

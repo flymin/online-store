@@ -1,4 +1,4 @@
-# Project Title
+# FLYMIN Online Store
 
 This project is a simple ruby on rails busisness website. Using as a traing example to start with making rails project. It's my first time to develop a WEB application, thus I spent a lot of time struggling with SCSS stylysheets and html labels. As a beginner, rubu language and fundamental rails develop model are also hard time for me. However, with the help of a patient instructor and useful information from website, I finally made this project WORK.
 

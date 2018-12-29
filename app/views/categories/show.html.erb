@@ -1,15 +1,67 @@
-<p id="notice"><%= notice %></p>
+<!-- Custom styles for this template -->
+<%= stylesheet_link_tag "categories" %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
+<!-- Page Content -->
+<div class="container my-4">
 
-<p>
-  <b>Products of this category:</b>
-  <%= (@category.products.collect { |product| product.title }).join(", ") %>
-</p>
+  <!-- Page Heading -->
+  <h1 class="my-4"><%= @category.name %>
+    <small>Category</small>
+  </h1>
+  <!-- Notice Bar -->
+  <% if not notice.nil? %>
+    <div class="alert alert-secondary" role="alert">
+      <%= notice %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  <% end %>
+  <hr>
+  <div>
+    <% cache @category do %>
+      <%= @category.products.collect.each do |product| %>
+        <% cache product do %>
+          <!-- Project One -->
+          <div class="row">
+            <div class="col-md-3">
+              <a href=<%= product_path(product) %>>
+                <!--          <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">-->
+                <%= image_tag product.image_url, class: "img-fluid rounded mb-3 mb-md-0 my-pic", alt: "" %>
+              </a>
+            </div>
+            <div class="col-md-9">
+              <h3><%= product.title %></h3>
+              <h6>
+                <%= number_to_currency(product.price) %>
+              </h6>
+              <div>
+                <%= sanitize(product.description) %>
+              </div>
+              <br>
+              <div class="form-row">
+                <div class="form-group col-md-2">
+                  <a class="btn btn-primary" href=<%= product_path(product) %>>View Product</a>
+                </div>
+                <div class="form-group col-md-2">
+                  <%= button_to 'Add to Cart', line_items_path(product_id: product), :class => "btn btn-primary" %>
+                </div>
+              </div>
 
+            </div>
+          </div>
+          <!-- /.row -->
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+          <hr>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <% if session[:user_id] %>
+    <%= link_to 'Edit', edit_category_path(@category),
+                :class => "btn btn-primary" %>
+  <% end %>
+  <%= link_to 'Back', store_index_path, :class => "btn btn-primary" %>
+</div>
+<!-- /.container -->

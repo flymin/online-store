@@ -35,7 +35,6 @@
     </ul>
   </div>
   <!-- /#sidebar-wrapper -->
-
   <!-- Page Content -->
   <div id="page-content-wrapper">
 
@@ -45,6 +44,7 @@
         <div class="row">
           <div class="col-lg-3">
             <h1 class="my-4">Flymin's bookstore</h1>
+
             <% if not notice.nil? %>
               <div class="alert alert-secondary" role="alert">
                 <%= notice %>
@@ -53,10 +53,11 @@
                 </button>
               </div>
             <% end %>
+
             <div class="list-group">
               <h5 class="list-group-item">Categories</h5>
               <% @categories.each do |category| %>
-                <a class="list-group-item" href="#">
+                <a class="list-group-item" href=<%= category_path(category) %>>
                   <%= category.name %>
                 </a>
               <% end %>
@@ -96,23 +97,25 @@
                   <% cache product do %>
                     <div class="col-lg-4 col-md-6 mb-4">
                       <div class="card h-100">
-                        <a href="#">
+                        <a href=<%= product_path(product) %>>
                           <%= image_tag product.image_url, class: "card-img-top", alt: "" %></a>
                         <div class="card-body">
                           <h5 class="card-title">
-                            <a href="#">
+                            <a href=<%= product_path(product) %>>
                               <%= product.title %>
                             </a>
                           </h5>
                           <h6>
                             <%= number_to_currency(product.price) %>
                           </h6>
-                          <h6>
-                            Category:
-                            <a href="#" class="fix-right">
-                              <%= product.category.name if product.category %>
-                            </a>
-                          </h6>
+                          <%  if product.category %>
+                            <h6>
+                              Category:
+                              <a href=<%= category_path(product.category) %> class="fix-right">
+                                <%= product.category.name %>
+                              </a>
+                            </h6>
+                          <% end %>
                           <div class="card-text">
                             <div class="card-my overflow-hidden">
                               <%= sanitize(product.description) %>

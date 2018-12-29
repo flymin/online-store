@@ -1,24 +1,59 @@
-<p id="notice"><%= notice %></p>
+<%= stylesheet_link_tag "products" %>
+<!-- Page Content -->
+<div class="container my-4">
 
-<p>
-  <strong>Title:</strong>
-  <%= @product.title %>
-</p>
+  <!-- Portfolio Item Heading -->
+  <h1 class="my-4"><%= @product.title %>
+    <% if @product.category %>
+      <small>Category: <%= @product.category.name %></small>
+    <% end %>
+  </h1>
+  <% if not notice.nil? %>
+    <div class="alert alert-secondary" role="alert">
+      <%= notice %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  <% end %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+  <!-- Portfolio Item Row -->
+  <div class="row">
 
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
+    <div class="col-md-3">
+      <%= image_tag @product.image_url, class: "img-fluid rounded mb-3 mb-md-0 my-pic", alt: "" %>
+    </div>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+    <div class="col-md-9">
+      <h3 class="my-3">Description</h3>
+      <%= sanitize(@product.description) %>
+      <h3 class="my-3"><%= number_to_currency(@product.price) %></h3>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+      <div class="form-row">
+        <div class="form-group col-md-2">
+          <%= button_to 'Add to Cart', line_items_path(product_id: @product), :class => "btn btn-primary" %>
+        </div>
+        <% if @product.category %>
+          <div class="form-group col-md-3">
+            <%= link_to 'View Category', category_path(@product.category), :class => "btn btn-primary" %>
+          </div>
+        <% end %>
+        <div class="form-group col-md-2">
+          <%= link_to 'Back Home', store_index_path, :class => "btn btn-primary" %>
+        </div>
+        <div class="form-group col-md-3">
+          <% if session[:user_id] %>
+            <%= link_to 'Edit', edit_product_path(@product),
+                        :class => "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->

@@ -3,7 +3,7 @@ require 'test_helper'
 class CategoriesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @category = categories(:one)
-    @update = {name: 'noval' }
+    @update = { name: 'noval' }
   end
 
   test "should get index" do

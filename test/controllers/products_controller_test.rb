@@ -2,13 +2,17 @@ require 'test_helper'
 
 class ProductsControllerTest < ActionDispatch::IntegrationTest
   setup do
+    @category = Category.new
+    @category.name = 'second'
+    @category.save
     @product = products(:one)
+    @product.category = @category
     @update = {
       title: 'Lorem Ipsum',
       description: 'Wibbles are fun!',
       image_url: 'lorem.jpg',
       price: 19.95,
-      category_id: categories(:one).id
+      category_id: @category.id
     }
   end
 

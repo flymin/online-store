@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :categories
   get 'admin' => 'admin#index'
 
   controller :sessions do
@@ -9,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :categories
+  resources :products
   resources :users
   get 'author' => 'author#show'
   resources :orders

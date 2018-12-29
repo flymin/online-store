@@ -51,7 +51,23 @@ Password: Admin
 1. This project contrains 10 controllers in total, in additon to an application controller as father class. Such module were achieved as: **store, product, line_item, cart, user, admin, catagory, order, session, author**. A full web commercial flow was realized.
 2. Using bootstrap to make custom UI, together with little javascript code to achieve dynamic effect of web page.
 3. For users' identification, make different page effects for customer and administrater, with the `Backstage` entrance admin users can log in to change some information prepared for the customers. Such changes will be send to the customers with `Channels` at once.
-4. There are six main pages set up, **store index, category show, product show, cart show, order create, user create, about author**.
+4. There are six main pages set up:
+    - store index
+        * ![home](readme_pic/homepage.PNG)
+        * ![cart_toggle](readme_pic/cart_mode.PNG)
+        * ![backstage](readme_pic/backstage.PNG)
+    - category show
+        * ![category](readme_pic/category.PNG)
+    - product show
+        * ![product_show](readme_pic/product.PNG)
+    - cart show
+        * ![cart_show](readme_pic/cart_page.PNG)
+    - order create
+        * ![order_create](readme_pic/checkout.PNG)
+    - user log in
+        * ![log in](readme_pic/log_in.PNG)
+    - about author
+        * ![about page](readme_pic/about.PNG)
 
 ### Other information
 
@@ -66,11 +82,13 @@ Password: Admin
 ## References
 
 Thanks to the help from open source tools and templates.
+
 - [Apidock](https://apidock.com/rails)
 - [Rails Guides](https://guides.rubyonrails.org/index.html)
 - [Bootstrap Documentation](https://getbootstrap.com/docs/4.2/getting-started/introduction/)
 - [startbootstrap](https://startbootstrap.com/)
 - [Agile Web Development with Rails, Edition 5](http://intertwingly.net/projects/AWDwR4/checkdepot-226-51/index.html)
+
 Some of my pictures are from *Amazon* and *The Pragmatic Bookshelf*
 
 

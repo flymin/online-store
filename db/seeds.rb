@@ -7,10 +7,16 @@
 # Visit http://www.pragmaticprogrammer.com/titles/rails5 for more book information.
 #---
 # encoding: utf-8
+User.delete_all
+User.create(name: 'Flymin', password: '980101', password_confirmation: '980101')
+Category.delete_all
+C1 = Category.create!(name: 'noval')
+C2 = Category.create!(name: 'technology')
+C3 = Category.create!(name: 'poem')
 Product.delete_all
 Product.create!(title: 'Rails, Angular, Postgres, and Bootstrap',
-  description:
-    %{<p>
+                description:
+                    %{<p>
       <em>Powerful, Effective, and Efficient Full-Stack Web Development</em>
       As a Rails developer, you care about user experience and performance,
       but you also want simple and maintainable code. Achieve all that by
@@ -21,12 +27,13 @@ Product.create!(title: 'Rails, Angular, Postgres, and Bootstrap',
       and learn to use these technologies effectively in a Ruby on Rails
       environment.
       </p>},
-  image_url: 'https://imagery.pragprog.com/products/508/dcbang2.jpg',
-  price: 45.00)
+                image_url: 'https://imagery.pragprog.com/products/508/dcbang2.jpg',
+                price: 45.00,
+                category_id: C2.id)
 # . . .
 Product.create!(title: 'Seven Mobile Apps in Seven Weeks',
-  description:
-    %{<p>
+                description:
+                    %{<p>
       <em>Native Apps, Multiple Platforms</em>
       Answer the question ¡°Can we build this for ALL the devices?¡± with a
       resounding YES. This book will help you get there with a real-world
@@ -34,13 +41,14 @@ Product.create!(title: 'Seven Mobile Apps in Seven Weeks',
       experienced developer needing to expand your options. Plus, you¡¯ll find
       out which cross-platform solution makes the most sense for your needs.
       </p>},
-  image_url: 'https://imagery.pragprog.com/products/445/7apps.jpg',
-  price: 26.00)
+                image_url: 'https://imagery.pragprog.com/products/445/7apps.jpg',
+                price: 26.00,
+                category_id: C2.id)
 # . . .
 
 Product.create!(title: 'Ruby Performance Optimization',
-  description:
-    %{<p>
+                description:
+                    %{<p>
       <em>Why Ruby Is Slow, and How to Fix It</em> 
       You don¡¯t have to accept slow Ruby or Rails performance. In this
       comprehensive guide to Ruby optimization, you¡¯ll learn how to write
@@ -51,5 +59,41 @@ Product.create!(title: 'Ruby Performance Optimization',
       all those ¡°hard¡± things aren¡¯t so difficult after all, and your code
       will run orders of magnitude faster.
       </p>},
-  image_url: 'https://imagery.pragprog.com/products/425/adrpo.jpg',
-  price: 46.00)
+                image_url: 'https://imagery.pragprog.com/products/425/adrpo.jpg',
+                price: 46.00,
+                category_id: C2.id)
+#...
+
+Product.create!(title: 'Half Girlfriend',
+                description:
+                    %{<p>Once upon a time, there was a Bihari boy called Madhav. He fell in love with girl called Riya.
+                      <p>Madhav didn’t speak English well. Riya did.</p><p>Madhav wanted a relationship. Riya didn’t.
+                      Riya just wanted friendship. Madhav didn’t.
+                      Riya suggested a compromise. She agreed to be his half girlfriend.
+                      From the author of the blockbuster novels
+                      Five Point Someone, One Night @ the Call Center, <i>The 3 Mistakes of My Life</i>,
+                      <i>2 States</i> and <i>Revolution 2020</i> comes a simple and beautiful love story that will
+                      touch your heart and inspire you to chase your dreams.</p>},
+                image_url: 'https://images-cn.ssl-images-amazon.com/images/I/51LxEF0TmgL.jpg',
+                price: 76.00,
+                category_id: C1.id)
+
+Product.create!(title: 'War and Peace',
+                description:
+                    %{War and Peace is considered one of the world’s greatest works of fiction.
+                      It is regarded, along with Anna Karenina, as Tolstoy’s finest literary achievement.
+                      Epic in scale, War and Peace delineates in graphic detail events leading up to
+                      Napoleon’s invasion of Russia, and the impact of the Napoleonic era on Tsarist
+                      society, as seen through the eyes of five Russian aristocratic families.},
+                image_url: 'https://images-cn.ssl-images-amazon.com/images/I/51GcIO0ciHL.jpg',
+                price: 159.00,
+                category_id: C1.id)
+
+Product.create!(title: 'The Garden of Forking Paths',
+                description:
+                    %{'Summer was drawing to a close, and I realized that the book was monstrous.' Fantastical tales of mazes, puzzles, lost labyrinths and bookish mysteries, from the unique imagination of a literary magician.},
+                image_url: 'https://images-cn.ssl-images-amazon.com/images/I/41Ok2WcQD2L._SX344_BO1,204,203,200_.jpg',
+                price: 15.00,
+                category_id: C3.id)
+
+

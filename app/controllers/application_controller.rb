@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   rescue_from 'User::Error' do |exception|
     if controller_name == "users" && action_name == "delete"
       redirect_to users_url, notice: exception.message
+    elsif controller_name == "categories" && action_name == "delete"
+      redirect_to categories_url, notice: exception.message
     else
       render plain: 'Not found', status: 400
     end

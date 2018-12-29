@@ -37,9 +37,6 @@
         <li class="nav-item">
           <%= link_to "About", author_url, :class => "nav-link"%>
         </li>
-        <li class="nav-item">
-          <%= link_to "Backstage", login_url, :class => "nav-link"%>
-        </li>
         <% if session[:user_id] %>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
@@ -56,6 +53,10 @@
                             :class => "list-group-item" %>
               </li>
               <li>
+                <%= link_to 'Categories', categories_path,
+                            :class => "list-group-item" %>
+              </li>
+              <li>
                 <%= link_to 'Users', users_path,
                             :class => "list-group-item" %>
               </li>
@@ -65,6 +66,10 @@
                             :class => "list-group-item" %>
               </li>
             </ul>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Backstage", login_url, :class => "nav-link"%>
           </li>
         <% end %>
       </ul>

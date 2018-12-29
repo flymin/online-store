@@ -1,5 +1,6 @@
 <div id="wrapper">
   <!-- Sidebar -->
+  <%= stylesheet_link_tag "stores" %>
   <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
       <li class="sidebar-brand">
@@ -53,10 +54,15 @@
               </div>
             <% end %>
             <div class="list-group">
-              <a href="#" class="list-group-item">Category 1</a>
-              <a href="#" class="list-group-item">Category 2</a>
-              <a href="#" class="list-group-item">Category 3</a>
-              <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">View Cart</a></div>
+              <h5 class="list-group-item">Categories</h5>
+              <% @categories.each do |category| %>
+                <a class="list-group-item" href="#">
+                  <%= category.name %>
+                </a>
+              <% end %>
+              <div class="dropdown-divider"></div>
+              <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">View Cart</a>
+            </div>
           </div>
           <!-- /.col-lg-3 -->
           <div class="col-lg-9">
@@ -95,12 +101,23 @@
                         <div class="card-body">
                           <h5 class="card-title">
                             <a href="#">
-                              <%= product.title %></a>
+                              <%= product.title %>
+                            </a>
                           </h5>
                           <h6>
-                            <%= number_to_currency(product.price) %></h6>
-                          <p class="card-text">
-                            <%= sanitize(product.description) %></p>
+                            <%= number_to_currency(product.price) %>
+                          </h6>
+                          <h6>
+                            Category:
+                            <a href="#" class="fix-right">
+                              <%= product.category.name if product.category %>
+                            </a>
+                          </h6>
+                          <div class="card-text">
+                            <div class="card-my overflow-hidden">
+                              <%= sanitize(product.description) %>
+                            </div>...
+                          </div>
                         </div>
                         <div class="card-footer">
                           <%= button_to 'Add to Cart', line_items_path(product_id: product) %>

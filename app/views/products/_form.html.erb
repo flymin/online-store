@@ -31,6 +31,10 @@
     <%= form.text_field :price %>
   </div>
 
+  <div>
+    <%= form.collection_select(:category_id, Category.all, :id, :name) %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

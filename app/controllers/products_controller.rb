@@ -45,7 +45,8 @@ class ProductsController < ApplicationController
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { render :show, status: :ok, location: @product }
 
-        @products = Product.all
+        @products = Product.order(:title)
+        @categories = Category.order(:name)
         ActionCable.server.broadcast 'products',
           html: render_to_string('store/index', layout: false )
       else
@@ -58,10 +59,14 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
-    @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
-      format.json { head :no_content }
+      if @product.destroy
+        format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to products_url, notice: 'Product cannot be destroyed.' }
+        format.json { head :no_content }
+      end
     end
   end
 
@@ -83,6 +88,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :image_url, :price)
+      params.require(:product).permit(:title, :description, :image_url, :price, :category_id)
     end
 end

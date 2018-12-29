@@ -8,7 +8,7 @@
 #---
 # encoding: utf-8
 User.delete_all
-User.create(name: 'Flymin', password: '980101', password_confirmation: '980101')
+User.create(name: 'Admin', password: 'Admin', password_confirmation: 'Admin')
 Category.delete_all
 C1 = Category.create!(name: 'noval')
 C2 = Category.create!(name: 'technology')

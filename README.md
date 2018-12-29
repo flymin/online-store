@@ -66,11 +66,11 @@ Password: Admin
 ## References
 
 Thanks to the help from open source tools and templates.
-[Apidock](https://apidock.com/rails)
-[Rails Guides](https://guides.rubyonrails.org/index.html)
-[Bootstrap Documentation](https://getbootstrap.com/docs/4.2/getting-started/introduction/)
-[startbootstrap](https://startbootstrap.com/)
-[Agile Web Development with Rails, Edition 5](http://intertwingly.net/projects/AWDwR4/checkdepot-226-51/index.html)
+- [Apidock](https://apidock.com/rails)
+- [Rails Guides](https://guides.rubyonrails.org/index.html)
+- [Bootstrap Documentation](https://getbootstrap.com/docs/4.2/getting-started/introduction/)
+- [startbootstrap](https://startbootstrap.com/)
+- [Agile Web Development with Rails, Edition 5](http://intertwingly.net/projects/AWDwR4/checkdepot-226-51/index.html)
 Some of my pictures are from *Amazon* and *The Pragmatic Bookshelf*
 
 

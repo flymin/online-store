@@ -19,9 +19,7 @@
   <% end %>
   <hr>
   <div>
-    <% cache @category do %>
-      <%= @category.products.collect.each do |product| %>
-        <% cache product do %>
+      <% @category.products.each do |product| %>
           <!-- Project One -->
           <div class="row">
             <div class="col-md-3">
@@ -54,8 +52,6 @@
 
           <hr>
         <% end %>
-      <% end %>
-    <% end %>
   </div>
 
   <% if session[:user_id] %>

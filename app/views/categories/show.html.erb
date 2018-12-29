@@ -20,7 +20,7 @@
   <hr>
   <div>
     <% cache @category do %>
-      <%= @category.products.collect.each do |product| %>
+      <% @category.products.collect.each do |product| %>
         <% cache product do %>
           <!-- Project One -->
           <div class="row">

@@ -53,21 +53,21 @@ Password: Admin
 3. For users' identification, make different page effects for customer and administrater, with the `Backstage` entrance admin users can log in to change some information prepared for the customers. Such changes will be send to the customers with `Channels` at once.
 4. There are six main pages set up:
     - store index
-        * ![home](readme_pic/homepage.PNG)
-        * ![cart_toggle](readme_pic/cart_mode.PNG)
-        * ![backstage](readme_pic/backstage.PNG)
+        ![home](readme_pic/homepage.PNG)
+        ![cart_toggle](readme_pic/cart_mode.PNG)
+        ![backstage](readme_pic/backstage.PNG)
     - category show
-        * ![category](readme_pic/category.PNG)
+        ![category](readme_pic/category.PNG)
     - product show
-        * ![product_show](readme_pic/product.PNG)
+        ![product_show](readme_pic/product.PNG)
     - cart show
-        * ![cart_show](readme_pic/cart_page.PNG)
+        ![cart_show](readme_pic/cart_page.PNG)
     - order create
-        * ![order_create](readme_pic/checkout.PNG)
+        ![order_create](readme_pic/checkout.PNG)
     - user log in
-        * ![log in](readme_pic/log_in.PNG)
+        ![log in](readme_pic/log_in.PNG)
     - about author
-        * ![about page](readme_pic/about.PNG)
+        ![about page](readme_pic/about.PNG)
 
 ### Other information
 

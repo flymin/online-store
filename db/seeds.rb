@@ -96,4 +96,10 @@ Product.create!(title: 'The Garden of Forking Paths',
                 price: 15.00,
                 category_id: C3.id)
 
-
+Product.create!(title: 'without image test',
+                description:
+                    %{this is a test for image not found},
+                image_url: 'dcbang2.jpg',
+                price: 45.00,
+                category_id: C3.id)
+#

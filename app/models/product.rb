@@ -10,14 +10,19 @@ class Product < ApplicationRecord
   has_many :line_items
   has_many :orders, through: :line_items
   belongs_to :category
- 
+
   before_destroy :ensure_not_referenced_by_any_line_item
- 
+
   #...
- 
- 
+  def image_valid?(string)
+    uri = URI.parse(string)
+    !uri.host.nil?
+    rescue URI::InvalidURIError
+        false
+  end
+
+
   private
- 
     # ensure that there are no line items referencing this product
     def ensure_not_referenced_by_any_line_item
       unless line_items.empty?

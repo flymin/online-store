@@ -20,9 +20,13 @@
   <!-- Portfolio Item Row -->
   <div class="row">
 
-    <div class="col-md-3">
-      <%= image_tag @product.image_url, class: "img-fluid rounded mb-3 mb-md-0 my-pic", alt: "" %>
-    </div>
+      <div class="col-md-3">
+        <% if (File.exist? File.expand_path @product.image_url) or @product.image_valid?(@product.image_url) %>
+          <%= image_tag @product.image_url, class: "img-fluid rounded mb-3 mb-md-0 my-pic", alt: "" %>
+        <% else %>
+          <%= image_tag "image_not_found.png", class: "img-fluid rounded mb-3 mb-md-0 my-pic", alt: "" %>
+        <% end %>
+      </div>
 
     <div class="col-md-9">
       <h3 class="my-3">Description</h3>
